@@ -100,13 +100,13 @@ struct vo_wayland_state {
     struct mp_image_params current_params;
     bool supports_parametric;
     bool supports_display_primaries;
+    bool supports_set_luminances;
     int primaries_map[PL_COLOR_PRIM_COUNT];
     int transfer_map[PL_COLOR_TRC_COUNT];
     void *icc_file;
     uint32_t icc_size;
     struct pl_color_space preferred_csp;
     bool image_description_info_done;
-    bool image_description_pending;
 
     /* color-representation */
     struct wp_color_representation_manager_v1 *color_representation_manager;
