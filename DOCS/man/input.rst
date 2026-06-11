@@ -1992,7 +1992,7 @@ The following hooks are currently defined:
 
 ``on_preloaded``
     Called after a file has been opened, and before tracks are selected and
-    decoders are created. This has some usefulness if an API user wants
+    decoders are created. This has some usefulness if an API users wants
     to select tracks manually, based on the set of available tracks. It's
     also useful to initialize ``--lavfi-complex`` in a specific way by API,
     without having to "probe" the available streams at first.
@@ -2002,13 +2002,6 @@ The following hooks are currently defined:
     what is not yet available yet, is all subject to change.
 
     Ordered after ``on_load_fail`` etc. and before ``playback-restart``.
-
-``on_loaded``
-    Called after a file has been loaded, after tracks are selected but before
-    starting playback. This has some usefulness if an API user wants
-    to act on selected track metadata before the media is shown.
-
-    Ordered after ``on_preloaded``. and before ``playback-restart``.
 
 ``on_unload``
     Run before closing a file, and before actually uninitializing
@@ -3200,20 +3193,6 @@ Property list
         Boolean - whether a tablet pad is currently focused.
     ``tablet-pos/pad-btns/N``
         The state of the Nth tablet pad button, ``pressed`` or ``released``.
-
-    ::
-
-        MPV_FORMAT_NODE_MAP
-            "x"                  MPV_FORMAT_INT64
-            "y"                  MPV_FORMAT_INT64
-            "tool-in-proximity"  MPV_FORMAT_FLAG
-            "tool-tip"           MPV_FORMAT_STRING
-            "tool-stylus-btn1"   MPV_FORMAT_STRING
-            "tool-stylus-btn2"   MPV_FORMAT_STRING
-            "tool-stylus-btn3"   MPV_FORMAT_STRING
-            "pad-focus"          MPV_FORMAT_FLAG
-            "pad-btns"           MPV_FORMAT_NODE_MAP
-               (key and string value for each pad-btn entry)
 
 ``sub-ass-extradata``
     The current ASS subtitle track's extradata. There is no formatting done.
